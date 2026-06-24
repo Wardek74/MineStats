@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MineStats - Minecraft Analytics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div id="top-bar">
+            <select id="lang-select">
+                <option value="fr">🇫🇷 Français</option>
+                <option value="en">🇺🇸 English</option>
+                <option value="es">🇪🇸 Español</option>
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="it">🇮🇹 Italiano</option>
+                <option value="pt">🇵🇹 Português</option>
+                <option value="ru">🇷🇺 Русский</option>
+                <option value="zh">🇨🇳 中文</option>
+                <option value="jp">🇯🇵 日本語</option>
+                <option value="kr">🇰🇷 한국어</option>
+            </select>
+            <button id="theme-switch" title="Changer de thème">🌓</button>
+        </div>
+
+        <header id="main-header">
+            <div class="header-content">
+                <h1 id="txt-title" class="clickable-logo">🔍 MineStats</h1>
+                <p id="txt-tagline">L'analyseur de statistiques Minecraft ultra-fluide</p>
+                <div id="drop-zone">
+                    <p id="txt-drop-main">🚀 Glissez vos fichiers <code>.json</code> ici</p>
+                    <span id="txt-drop-sub">(dossier world/stats)</span>
+                </div>
+            </div>
+            <input type="file" id="file-input" multiple accept=".json" hidden>
+        </header>
+
+        <main id="main-content" style="display: none;">
+            <aside id="player-sidebar">
+                <div class="sidebar-header" id="txt-members">Membres</div>
+                <div id="search-container">
+                    <input type="text" id="player-search" placeholder="Rechercher...">
+                </div>
+                <ul id="players-ul"></ul>
+            </aside>
+
+            <section id="details-panel">
+                <div id="player-banner">
+                    <div class="banner-info">
+                        <h2 id="current-player-name">Sélectionnez un joueur</h2>
+                        <code id="current-player-uuid"></code>
+                    </div>
+                </div>
+                
+                <div id="category-selector"></div>
+
+                <div id="results-container">
+                    <div id="stats-header">
+                        <span id="txt-col-item">ÉLÉMENT</span>
+                        <span id="txt-col-val">VALEUR</span>
+                    </div>
+                    <div id="stats-results">
+                        <p class="placeholder-text" id="txt-placeholder">Sélectionnez une catégorie ci-dessus.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
