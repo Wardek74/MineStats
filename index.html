@@ -29,8 +29,8 @@
                 <h1 id="txt-title" class="clickable-logo">🔍 MineStats</h1>
                 <p id="txt-tagline">L'analyseur de statistiques Minecraft ultra-fluide</p>
                 <div id="drop-zone">
-                    <p id="txt-drop-main">🚀 Glissez vos fichiers <code>.json</code> ici</p>
-                    <span id="txt-drop-sub">(dossier world/stats)</span>
+                    <p id="txt-drop-main">🚀 Glissez vos fichiers <code>.json</code> ou dossier ici</p>
+                    <span id="txt-drop-sub">(stats et/ou usercache.json)</span>
                 </div>
             </div>
             <input type="file" id="file-input" multiple accept=".json" hidden>
@@ -47,9 +47,19 @@
 
             <section id="details-panel">
                 <div id="player-banner">
+                    <div class="banner-avatar-wrap">
+                        <img id="current-player-avatar" class="banner-avatar" alt="Avatar" src="">
+                    </div>
                     <div class="banner-info">
-                        <h2 id="current-player-name">Sélectionnez un joueur</h2>
-                        <code id="current-player-uuid"></code>
+                        <div class="player-title-row">
+                            <h2 id="current-player-name">Sélectionnez un joueur</h2>
+                            <button id="btn-edit-player" class="btn-icon" title="Modifier le pseudo" style="display:none;">✏️</button>
+                            <span id="player-type-badge" class="badge" style="display:none;"></span>
+                        </div>
+                        <div class="player-uuid-row">
+                            <code id="current-player-uuid"></code>
+                            <button id="btn-copy-uuid" class="btn-icon-small" title="Copier l'UUID" style="display:none;">📋</button>
+                        </div>
                     </div>
                 </div>
                 
@@ -67,6 +77,9 @@
             </section>
         </main>
     </div>
+
+    <div id="toast" class="toast"></div>
+
     <script src="script.js"></script>
 </body>
 </html>
